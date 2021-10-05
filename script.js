@@ -121,3 +121,11 @@ function confirma(){
     
 }
 comecarEtapa();
+
+qS('button').addEventListener('click',()=>{
+    if(qS('.candidatos--painel').style.display == 'none'){
+        qS('.candidatos--painel').style.display = 'flex'
+    }else {
+        qS('.candidatos--painel').style.display = 'none'
+    } 
+});
