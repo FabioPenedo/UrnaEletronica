@@ -37,6 +37,7 @@ function clicou(n){
     if(elNumero !== null) {
         elNumero.innerHTML = n
         elNumero.classList.remove('pisca');
+        playKey();
         numeroD = `${numeroD}${n}`;
         if(elNumero.nextElementSibling !== null) {
             elNumero.nextElementSibling.classList.add('pisca');
@@ -110,6 +111,7 @@ function confirma(){
         });
     }
     if(votoConfirmado){
+        playConfirm();
         etapaAtual++
         if(etapas[etapaAtual] !== undefined){
             comecarEtapa();
@@ -129,3 +131,14 @@ qS('button').addEventListener('click',()=>{
         qS('.candidatos--painel').style.display = 'none'
     } 
 });
+
+function playConfirm(){
+    let audioElement = qS('.csound');
+    audioElement.play();
+}
+
+function playKey(){
+    let audioElement = qS('.ksound');
+    audioElement.currentTime = 0;
+    audioElement.play();
+}
